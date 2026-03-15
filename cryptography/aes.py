@@ -5,7 +5,9 @@ from Crypto.Util.Padding import pad, unpad
 
 
 def encrypt(key, message: str):
+    # CBC est simple et evite le chiffrement bloc par bloc independant.
     iv = os.urandom(16)
+    # IV aleatoire : meme message, resultat different a chaque fois.
     cipher = AES.new(key, AES.MODE_CBC, iv)
     data = pad(message.encode(), AES.block_size, style="pkcs7")
     return iv, cipher.encrypt(data)

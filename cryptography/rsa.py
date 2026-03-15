@@ -7,7 +7,7 @@ def generate_rsa_key_pair():
 
 
 def encrypt_rsa(public_key, message: str) -> bytes:
-    # OAEP avoids padding oracle issues better than PKCS1 v1.5
+    # OAEP est prefere car il protege mieux que PKCS1 v1.5.
     cipher = PKCS1_OAEP.new(public_key)
     return cipher.encrypt(message.encode())
 
