@@ -28,3 +28,17 @@ uv run python cryptography/aes.py
 uv run python cryptography/rsa.py
 uv run python cryptography/signature.py
 ```
+
+## Run the TLS demo
+
+Start the server in one terminal:
+
+```bash
+uv run python tls/server.py
+```
+
+Then start the client in another terminal:
+
+```bash
+uv run python tls/client.py
+```
